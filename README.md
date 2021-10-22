@@ -19,8 +19,8 @@ npm start
 ```
 
 Open your local browser and verify the NodeRestApi is working by accessing:     
-`http://localhost:3000/product/`   
-`http://localhost:3000/cat/`   
-`http://localhost:3000/product/:id/`   
+`http://localhost:3000/product/`  GET
+`http://localhost:3000/cat/`   GET
+`http://localhost:3000/product/:id/`  PUT   
 
 
