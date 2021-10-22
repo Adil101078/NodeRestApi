@@ -15,12 +15,18 @@ A RESTful API that can /create/read/update/delete Product and Category data from
 git clone https://github.com/Adil101078/NodeRestApi
 cd NodeRestApi
 npm install
-npm start
+node app.js
 ```
 
 Open your local browser and verify the NodeRestApi is working by accessing:     
-`http://localhost:3000/product/`  GET
-`http://localhost:3000/cat/`   GET
-`http://localhost:3000/product/:id/`  PUT   
+`http://localhost:3000/product`
+`http://localhost:3000/cat`   
+`http://localhost:3000/product/:id`  
+
+### 2) To add a produuct to the database
+```
+// Make a POST request through Postman and send the request to
+`http://localhost:3000/product`
+
 
 
