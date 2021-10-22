@@ -23,7 +23,7 @@ Open your local browser and verify the NodeRestApi is working by accessing:
 `http://localhost:3000/cat`   
 `http://localhost:3000/product/:id`  
 
-### 2) To add a produuct to the database
+### 2) To add a product to the database
 ```
 // Make a POST request through Postman and send the request to
 `http://localhost:3000/product`
