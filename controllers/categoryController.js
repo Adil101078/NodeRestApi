@@ -3,7 +3,7 @@ const category = require('../models/categoryModel')
 //Method to fetch all categories
 exports.getAll = async (req, res) => {
     try {
-        let cat = await category.find()
+        let cat = await category.find().populate('products')
         res.status(200).json(cat)
     } catch (err) {
         console.log(err);
@@ -24,9 +24,12 @@ exports.getById = async (req, res) => {
 }
 
 //Method to create a new category and save to database
-exports.create = async (req, res) => {
+exports.create = async (req, res) => { 
     try {
-        let newCat = new category(req.body)
+        let newCat = new category({
+           categoryName:req.body.categoryName,
+           products:[] 
+        })
         await newCat.save()
         res.status(201).json(newCat)
     } catch (err) {
@@ -39,8 +42,8 @@ exports.create = async (req, res) => {
 //Method to update an existing category and save to database
 exports.update = async (req, res) => {
     try {
-        let cat = await category.findByIdAndUpdate(req.params.id, req.body)
-        let newCat = new category(req.body)
+        let cat = await category.findOneAndUpdate(req.params.id, {$push:{products:req.body.productId}}, {new:true})
+        
         await cat.save()
         res.status(201).json(newCat)
     } catch (err) {
