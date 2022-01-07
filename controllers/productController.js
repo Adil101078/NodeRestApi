@@ -6,7 +6,7 @@ const cat = require('../models/categoryModel')
 exports.getAll = async (req, res) => {
     try {
         let data = await product.find().populate("categoryId");
-        res.status(200).json(data);
+        res.status(200).render('product', {items:data, publishableKey:publishableKey});
     } catch (err) {
         console.log(err);
         res.status(500).json({ success: false, msg: err.message });
