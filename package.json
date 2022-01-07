@@ -1,5 +1,8 @@
 {
+
   "name": "solulab_assignment",
+  "name": "nodejs_restapi",
+
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
